@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- <script src="js/mindar-image.prod.js"></script> -->
+    <script src="js/aframe-v1.4.2.min.js"></script>
+    <script src="js/aframe-extras.min.js"></script>
+    <script src="js/mindar-image-aframe.prod.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <title>Lo Que Hubiera Sido | What Could Have Been</title>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: targets/targets.mind;filterMinCF:0.1; filterBeta: 10" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+      <a-assets>
+        <img id="postcard-back" src="media/postcard-example-2.jpg" />
+        <img id="play-circle" src="media/play-circle.png" />
+        <video id="priest-video" webkit-playsinline playsinline autoplay loop crossorigin src="media/romero.mp4"></video>
+        <!-- <audio id="hotspot-6" src="media/hotspot-6.mp3" controls></audio> -->
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="#postcard-back" position="0 0 0" height="0.8" width="1.2" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="romero-video-holder" mindar-image-target="targetIndex: 1">
+        <a-video id="romeo" src="#play-circle" class="clickable" position="0 0 0"><a-video>
+      </a-entity>
+<!--       
+      <a-entity id="audio-holder" mindar-image-target="targetIndex: 1">
+        <a-audio id="audio" src="#play-circle" class="clickable" position="0 0 0"><a-audio>
+      </a-entity> 
+-->
+    </a-scene>
+    <script>
+      jQuery(document).ready(function($){
+
+        $("#romeo").on("click", function(){
+          $(this).attr("src", "#priest-video");
+          $("#priest-video").get(0).play();
+        })
+
+        $("#romero-video-holder").on("targetLost", function(){
+          $("#priest-video").get(0).pause();
+        })
+
+        // $("#audio").on("click", function(){
+        //   $(this).attr("src", "#hotspot-6");
+        //   $("#hotspot-6").get(0).play();
+        // })
+
+      })
+    </script>
+  </body>
+</html>
