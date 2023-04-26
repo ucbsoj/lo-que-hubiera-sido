@@ -7,6 +7,8 @@ By Semantha Norris
 
 [https://ucbsoj.github.io/lo-que-hubiera-sido](https://ucbsoj.github.io/lo-que-hubiera-sido)
 
+<img src="/media/qr.png?raw=true" width="150" height="150" alt="QR code">
+
 **Example images to scan:**
 
 ![Priest](/media/priest.png?raw=true "Priest")
@@ -36,6 +38,7 @@ TBA... hang tight
 
 #### Documentation
 
-a-video tag: [https://aframe.io/docs/1.4.0/primitives/a-video.html](https://aframe.io/docs/1.4.0/primitives/a-video.html)
-a-plane tag (for images): [https://aframe.io/docs/1.4.0/primitives/a-plane.html](https://aframe.io/docs/1.4.0/primitives/a-plane.html)
-a-sound tag: [https://aframe.io/docs/1.4.0/primitives/a-sound.html](https://aframe.io/docs/1.4.0/primitives/a-sound.html)
+* a-video tag: [https://aframe.io/docs/1.4.0/primitives/a-video.html](https://aframe.io/docs/1.4.0/primitives/a-video.html)
+* a-plane tag (for images): [https://aframe.io/docs/1.4.0/primitives/a-plane.html](https://aframe.io/docs/1.4.0/primitives/a-plane.html)
+* a-sound tag: [https://aframe.io/docs/1.4.0/primitives/a-sound.html](https://aframe.io/docs/1.4.0/primitives/a-sound.html)
+
