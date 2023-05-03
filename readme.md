@@ -11,9 +11,11 @@ By Semantha Norris
 
 **Example images to scan:**
 
-![Priest](/media/priest.png?raw=true "Priest")
+![Example 1](/media/hs1-target.jpg?raw=true "Example 1")
 
-![Example 1](/media/postcard-example-1.jpg?raw=true "Example 1")
+![Example 2](/media/hs2-target.jpg?raw=true "Example 2")
+
+![Example 3](/media/hs3-target.jpg?raw=true "Example 3")
 
 
 #### Instructions:
