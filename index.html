@@ -253,8 +253,12 @@
               source.attr("type", "video/mp4");
             }
             
+            
             videoHolder.html(source);
             videoHolder.attr("id", replaceChars(videoID));
+            videoHolder.attr("webkit-playsinline", true);
+            videoHolder.attr("playsinline", true);
+            
             
             $("a-assets").append(videoHolder);
             
