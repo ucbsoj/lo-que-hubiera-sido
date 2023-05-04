@@ -11,11 +11,13 @@ By Semantha Norris
 
 **Example images to scan:**
 
-![Example 1](/media/hs1-target.jpg?raw=true "Example 1")
+![Example 1](/targets/HS01-target.png?raw=true "Example 1")
 
-![Example 2](/media/hs2-target.jpg?raw=true "Example 2")
+![Example 2](/targets/HS02-target.jpg?raw=true "Example 2")
 
-![Example 3](/media/hs3-target.jpg?raw=true "Example 3")
+![Example 3](/targets/HS03-target.png?raw=true "Example 3")
+
+![Example 4](/targets/HS04-target.png?raw=true "Example 4")
 
 
 #### Instructions:
