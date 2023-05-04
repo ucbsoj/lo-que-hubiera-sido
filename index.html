@@ -221,8 +221,10 @@
         $("a-video").on("click", function(e){
           console.log($(this).data("src"));
 
-          if($("a-video[data-src='" + videoID + "']").attr("src") != "#" + replaceChars(videoID)){
+          if($("a-video[data-src='" + videoID + "']").length !== 0 && $("a-video[data-src='" + videoID + "']").attr("src") != "#" + replaceChars(videoID)){
             $("a-video[data-src='" + videoID + "']").attr("src", "#" + replaceChars(videoID));
+            $("a-video").not("a-video[data-src='" + videoID + "']").attr("src", "#play-circle");
+            $("a-assets video").not("#" + replaceChars(videoID)).remove();
             $("#" + replaceChars(videoID)).get(0).play();
           }
             
