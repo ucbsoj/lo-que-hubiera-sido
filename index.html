@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- <script src="js/mindar-image.prod.js"></script> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/aframe-v1.4.2.min.js"></script>
     <script src="js/aframe-extras.min.js"></script>
     <script src="js/mindar-image-aframe.prod.js"></script>
@@ -11,78 +11,79 @@
     <title>Lo Que Hubiera Sido | What Could Have Been</title>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: targets/targets.mind;filterMinCF:0.05; filterBeta: 100" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    
+<!--
+    <div class="container position-relative z-3">
+      <div class="row d-flex flex-column justify-content-center vh-100 text-center">
+        <h1>Lo Que Hubiera Sido <br> What Could Have Been</h1>
+        <button id="launch" type="button" class="btn btn-lg btn-outline-success">Start Project</button>
+      </div>
+    </div>
+-->
+    
+    
+    <a-scene mindar-image="imageTargetSrc:targets/targets.mind;filterMinCF:0.05;filterBeta:100;autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
       <a-assets>
-        <video id="hs1" autoplay="true" webkit-playsinline playsinline loop crossorigin src="media/hs1-replacement.mp4" width="1916" height="1320"></video>
-        <video id="hs2" autoplay="true" webkit-playsinline playsinline loop crossorigin src="media/hs2-replacement.mp4"></video>
-        <video id="hs3" autoplay="true" webkit-playsinline playsinline loop crossorigin src="media/hs3-replacement.mp4"></video>
+        <img id="play-circle" src="media/play-circle.png" alt="play circle">
+        <video id="hs1" autoplay="false" webkit-playsinline playsinline loop crossorigin src="media/hs1-replacement.mp4"></video>
+        <video id="hs2" autoplay="false" webkit-playsinline playsinline loop crossorigin src="media/hs2-replacement.mp4"></video>
+        <video id="hs3" autoplay="false" webkit-playsinline playsinline loop crossorigin src="media/hs3-replacement.mp4"></video>
       </a-assets>
 
-      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
       
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-video src="#hs1" class="clickable" width="1" height="0.6875" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="#hs1" class="clickable" width="1" height="0.6875" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 1">
-        <a-video src="#hs2" class="clickable" width="1" height="0.75" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="#hs2" class="clickable" width="1" height="0.75" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 2">
-        <a-video src="#hs3" class="clickable" width="0.8662" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="#hs3" class="clickable" width="0.8662" height="1" position="0 0 0"></a-video>
       </a-entity> 
       
     </a-scene>
     <script>
+      //add new property for HTMLMediaElement to see if videos are playing
+      Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+          get: function(){return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);}
+      });
+      
       jQuery(document).ready(function($){
         
-        $("a-entity").on("targetFound", function(e){
-          let id = $("a-video", this).attr("src");
-          console.log($("a-video", this).attr("src"));
-          $(id).get(0).play();
+        var videoHolder;
+        
+        $("a-video").on("click", function(e){
+          if(typeof videoHolder != 'undefined' && $(this).attr("src") == "#play-circle"){
+            $("a-video[data-src='" + videoHolder + "']").attr("src", videoHolder);
+            $(videoHolder).get(0).play();
+          }
         });
         
+        
+        $("a-entity").on("targetFound", function(e){
+          let id = $("a-video", this).data("src");
+          let video = $(id).get(0);
+          videoHolder = id;
+          if(video.readyState == 4 && video.currentTime > 0){
+            video.play();
+          }
+        });
+        
+        
         $("a-entity").on("targetLost", function(e){
-          let id = $("a-video", this).attr("src");
-          console.log($("a-video", this).attr("src"));
-          $(id).get(0).pause();
+          let id = $("a-video", this).data("src");
+          let video = $(id).get(0);
+          console.log(id, video, "current Time:", video.currentTime, "paused", video.paused, "ready state", video.readyState);
+          if($(id).get(0).playing){
+            $(id).get(0).pause();
+          }
         });
 
-//        $("#romero").on("click", function(){
-//          $(this).attr("src", "#priest-video");
-//          $("#priest-video").get(0).play();
-//          console.log("click on video")
-//        });
-//        
-//        $("#audio").on("click", function(){
-//          //$(this).attr("src", "src:url(/media/Hotspot-3-edited.mp3)");
-//          //$(this).attr("autoplay", "true");
-//          $("#hotspot-6").get(0).play();
-//          console.log("audio clicked");
-//        })
-//        
-//        $("#audio-holder").on("targetLost", function(){
-//          $("#hotspot-6").get(0).pause();
-//        })
-//        
-//
-//        $("#romero-video-holder").on("targetLost", function(){
-//          $("#priest-video").get(0).pause();
-//        });
-//        
-//        $("#romero-video-holder").on("targetFound", function(){
-//          if($("#priest-video").get(0).currentTime > 0 && $("#priest-video").get(0).paused){
-//            $("#priest-video").get(0).play();
-//          }
-//        });
-
-        // $("#audio").on("click", function(){
-        //   $(this).attr("src", "#hotspot-6");
-        //   $("#hotspot-6").get(0).play();
-        // })
-
-      })
+      });
     </script>
   </body>
 </html>
