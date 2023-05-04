@@ -12,32 +12,22 @@
   </head>
   <body>
     
-<!--
-    <div class="container position-relative z-3">
-      <div class="row d-flex flex-column justify-content-center vh-100 text-center">
-        <h1>Lo Que Hubiera Sido <br> What Could Have Been</h1>
-        <button id="launch" type="button" class="btn btn-lg btn-outline-success">Start Project</button>
-      </div>
-    </div>
--->
-    
     
     <a-scene mindar-image="imageTargetSrc:targets/targets.mind;filterMinCF:0.05;filterBeta:100;autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
       <a-assets>
         <img id="play-circle" src="media/play-circle.png" alt="play circle">
+<!-- 
+       
         <video id="hs1" autoplay="false" webkit-playsinline playsinline loop crossorigin>
-          <source src="media/HS01-replacement/HS01-replacement.m3u8" type="application/x-mpegURL">
           <source src="media/HS01-replacement/HS01-replacement.mp4" type="video/mp4">
         </video>
+
         <video id="hs2" autoplay="false" webkit-playsinline playsinline loop crossorigin>
           <source src="media/HS02-replacement/HS02-replacement.m3u8" type="application/x-mpegURL">
           <source src="media/HS02-replacement/HS02-replacement.mp4" type="video/mp4">
         </video>
-        <video id="hs3" autoplay="false" webkit-playsinline playsinline loop crossorigin>
-          <source src="media/HS03-replacement/HS03-replacement.m3u8" type="application/x-mpegURL">
-          <source src="media/HS03-replacement/HS03-replacement.mp4" type="video/mp4">
-        </video>
+
         <video id="hs4" autoplay="false" webkit-playsinline playsinline loop crossorigin>
           <source src="media/HS04-replacement/HS04-replacement.m3u8" type="application/x-mpegURL">
           <source src="media/HS04-replacement/HS04-replacement.mp4" type="video/mp4">
@@ -107,108 +97,109 @@
           <source src="media/HSE06-replacement/HSE06-replacement.m3u8" type="application/x-mpegURL">
           <source src="media/HSE06-replacement/HSE06-replacement.mp4" type="video/mp4">
         </video>
+-->
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
       
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-video src="#play-circle" data-src="#hs1" class="clickable" width="1" height="0.689" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS01-replacement/HS01-replacement" class="clickable" width="1" height="0.689" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 1">
-        <a-video src="#play-circle" data-src="#hs2" class="clickable" width="1" height="0.739" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS02-replacement/HS02-replacement" class="clickable" width="1" height="0.739" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 2">
-        <a-video src="#play-circle" data-src="#hs3" class="clickable" width="0.865" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS03-replacement/HS03-replacement" class="clickable" width="0.865" height="1" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 3">
-        <a-video src="#play-circle" data-src="#hs4" class="clickable" width="1" height="0.808" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS04-replacement/HS04-replacement" class="clickable" width="1" height="0.808" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 4">
-        <a-video src="#play-circle" data-src="#hs5" class="clickable" width="0.892" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS05-replacement/HS05-replacement" class="clickable" width="0.892" height="1" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 5">
-        <a-video src="#play-circle" data-src="#hs6" class="clickable" width="1" height="0.808" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS06-replacement/HS06-replacement" class="clickable" width="1" height="0.808" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 6">
-        <a-video src="#play-circle" data-src="#hs7" class="clickable" width="0.718" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS07-replacement/HS07-replacement" class="clickable" width="0.718" height="1" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 7">
-        <a-video src="#play-circle" data-src="#hs8" class="clickable" width="1" height="0.806" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS08-replacement/HS08-replacement" class="clickable" width="1" height="0.806" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 8">
-        <a-video src="#play-circle" data-src="#hs9" class="clickable" width="0.768" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS09-replacement/HS09-replacement" class="clickable" width="0.768" height="1" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 9">
-        <a-video src="#play-circle" data-src="#hs10" class="clickable" width="1" height="0.792" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS10-replacement/HS10-replacement" class="clickable" width="1" height="0.792" position="0 0 0"></a-video>
       </a-entity>
       
       
       
       
       <a-entity mindar-image-target="targetIndex: 10">
-        <a-video src="#play-circle" data-src="#hs12" class="clickable" width="1" height="0.713" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS12-replacement/HS12-replacement" class="clickable" width="1" height="0.713" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 11">
-        <a-video src="#play-circle" data-src="#hs13" class="clickable" width="0.711" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS13-replacement/HS13-replacement" class="clickable" width="0.711" height="1" position="0 0 0"></a-video>
       </a-entity>
       
       
       
 
       <a-entity mindar-image-target="targetIndex: 12">
-        <a-video src="#play-circle" data-src="#hs15" class="clickable" width="1" height="0.786" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS15-replacement/HS15-replacement" class="clickable" width="1" height="0.786" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 13">
-        <a-video src="#play-circle" data-src="#hs16" class="clickable" width="1" height="0.583" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS16-replacement/HS16-replacement" class="clickable" width="1" height="0.583" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 14">
-        <a-video src="#play-circle" data-src="#hs17" class="clickable" width="1" height="0.702" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HS17-replacement/HS17-replacement" class="clickable" width="1" height="0.702" position="0 0 0"></a-video>
       </a-entity>
       
       
       
       <a-entity mindar-image-target="targetIndex: 15">
-        <a-video src="#play-circle" data-src="#hse01" class="clickable" width="1" height="0.753" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE01-replacement/HSE01-replacement" class="clickable" width="1" height="0.753" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 16">
-        <a-video src="#play-circle" data-src="#hse02" class="clickable" width="0.72" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE02-replacement/HSE02-replacement" class="clickable" width="0.72" height="1" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 17">
-        <a-video src="#play-circle" data-src="#hse03" class="clickable" width="1" height="0.721" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE03-replacement/HS03-replacement" class="clickable" width="1" height="0.721" position="0 0 0"></a-video>
       </a-entity>
       
       <a-entity mindar-image-target="targetIndex: 18">
-        <a-video src="#play-circle" data-src="#hse04" class="clickable" width="0.714" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE04-replacement/HSE04-replacement" class="clickable" width="0.714" height="1" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 19">
-        <a-video src="#play-circle" data-src="#hse05" class="clickable" width="0.718" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE05-replacement/HSE05-replacement" class="clickable" width="0.718" height="1" position="0 0 0"></a-video>
       </a-entity> 
       
       <a-entity mindar-image-target="targetIndex: 20">
-        <a-video src="#play-circle" data-src="#hse06" class="clickable" width="0.714" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE06-replacement/HSE06-replacement" class="clickable" width="0.714" height="1" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 21">
-        <a-video src="#play-circle" data-src="#hse07" class="clickable" width="0.659" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE07-replacement/HSE07-replacement" class="clickable" width="0.659" height="1" position="0 0 0"></a-video>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 22">
-        <a-video src="#play-circle" data-src="#hse08" class="clickable" width="0.66" height="1" position="0 0 0"></a-video>
+        <a-video src="#play-circle" data-src="media/HSE08-replacement/HSE08-replacement" class="clickable" width="0.66" height="1" position="0 0 0"></a-video>
       </a-entity>
       
     </a-scene>
@@ -220,34 +211,76 @@
       
       jQuery(document).ready(function($){
         
-        var videoHolder;
+       
+        var   videoID     = "";
+        
+        //HS01-replacement/HS01-replacement.m3u8
+        
+        
         
         $("a-video").on("click", function(e){
-          if(typeof videoHolder != 'undefined' && $(this).attr("src") == "#play-circle"){
-            $("a-video[data-src='" + videoHolder + "']").attr("src", videoHolder);
-            $(videoHolder).get(0).play();
+          console.log($(this).data("src"));
+
+          if($("a-video[data-src='" + videoID + "']").attr("src") != "#" + replaceChars(videoID)){
+            $("a-video[data-src='" + videoID + "']").attr("src", "#" + replaceChars(videoID));
+            $("#" + replaceChars(videoID)).get(0).play();
           }
+            
         });
         
         
         $("a-entity").on("targetFound", function(e){
+          
+          //get the url to the video from data-src attribute
           let id = $("a-video", this).data("src");
-          let video = $(id).get(0);
-          videoHolder = id;
-          if(video.readyState == 4 && video.currentTime > 0){
-            video.play();
+
+          console.log("id:", id, "videoID:", videoID);
+          
+          
+          if(id !== videoID && $("#" + replaceChars(id)).length === 0){
+            videoID = id;
+            
+            let videoHolder = $("<video />");
+            let source      = $("<source />")
+            
+            if(!!videoHolder.get(0).canPlayType && (videoHolder.get(0).canPlayType('application/vnd.apple.mpegURL') != '' || videoHolder.get(0).canPlayType('audio/mpegurl') != '')){
+              source.attr("src", id + ".m3u8");
+              source.attr("type", "application/x-mpegURL");
+            } else {
+              source.attr("src", id + ".mp4");
+              source.attr("type", "video/mp4");
+            }
+            
+            videoHolder.html(source);
+            videoHolder.attr("id", replaceChars(videoID));
+            
+            $("a-assets").append(videoHolder);
+            
+            videoHolder.get(0).pause();
+            
+          } else if($("#" + replaceChars(id)).length != 0){
+            if($("#" + replaceChars(id)).get(0).readyState == 4 && $("#" + replaceChars(id)).get(0).currentTime > 0){
+              $("#" + replaceChars(id)).get(0).play();
+            }
           }
+             
+          
+
         });
         
         
         $("a-entity").on("targetLost", function(e){
           let id = $("a-video", this).data("src");
-          let video = $(id).get(0);
-          console.log(id, video, "current Time:", video.currentTime, "paused", video.paused, "ready state", video.readyState);
-          if($(id).get(0).playing){
-            $(id).get(0).pause();
-          }
+          
+          $("a-assets video").each(function(i,e){
+            $(this).get(0).pause();
+          });
+
         });
+        
+        function replaceChars(text){
+          return text.replace(/\//g, "-");
+        }
 
       });
     </script>
